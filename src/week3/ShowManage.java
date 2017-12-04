@@ -35,7 +35,6 @@ public class ShowManage {
     switch(choose1) {
       case 1: 
         list.add(obj);
-        System.out.print(list.get(0));
         break;
       case 2:
         list.add(0,obj);
