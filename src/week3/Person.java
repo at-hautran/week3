@@ -1,10 +1,13 @@
 package week3;
 
+import java.util.Scanner;
+
 public class Person {
   String name;
   int year;
   String address;
   private String career;
+  Scanner input = new Scanner(System.in);
 
   public Person() {
     
@@ -51,6 +54,16 @@ public class Person {
   }
   public void printInfor() {
   }
-
+  
+  public void edit() {
+	  System.out.print("Nhap ten : ");
+	  name = input.nextLine();
+	  this.setName(name);
+	  System.out.print("Nhap nam sinh : ");
+	  this.setYear(input.nextInt());
+	  input.nextLine();
+	  System.out.print("Nhap que quan : ");
+	  this.setAddress(input.nextLine());
+  }
 
 }
