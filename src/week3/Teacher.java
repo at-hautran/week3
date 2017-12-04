@@ -101,4 +101,28 @@ public class Teacher extends Person {
     input.nextLine();
     this.setAllowance(this.degree);
   }
+  
+  public void edit() {
+	  super.edit();
+	  System.out.print("Nhap khoa : ");
+	  this.setFaculty(input.nextLine());
+	  System.out.println("Chon trinh do : ");
+	  System.out.println("\t1.Cu nhan 2.Thac si 3.Tien si");
+	  int choose = input.nextInt();
+	  if(choose == 1) {
+	    this.setDegree("Cu nhan");
+	  }
+	  else if(choose == 2) {
+	    this.setDegree("Thac si");
+	  }
+	  else if(choose == 3) {
+	    this.setDegree("Tien si");
+	  }
+	  System.out.print("Nhap so tiet day/thang : ");
+	  this.setLesson(input.nextInt());
+	  System.out.print("Nhap he so luong : ");
+	  this.setCoefficientSalary(input.nextFloat());
+	  input.nextLine();
+	  this.setAllowance(this.degree);
+  }
 }

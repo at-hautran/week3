@@ -100,4 +100,28 @@ public class Employee extends Person {
     this.setAllowance(this.position);
   }
   
+  public void edit() {
+	    super.edit();
+	    System.out.print("Nhap phong ban : ");
+	    this.setDepartment(input.nextLine());
+	    System.out.println("Chon chuc vu : ");
+	    System.out.println("\t1.Nhan vien  2.Pho phong  3.Truong phong");
+	    int choose = input.nextInt();
+	    if(choose == 1) {
+	      this.setPosition("Nhan vien");
+	    }
+	    else if(choose == 2) {
+	      this.setPosition("Pho phong");
+	    }
+	    else if(choose == 3) {
+	      this.setPosition("Truong phong");
+	    }
+	    System.out.print("Nhap so ngay cong : ");
+	    this.setWorkDay(input.nextInt());
+	    System.out.print("Nhap he so luong : ");
+	    this.setCoefficientSalary(input.nextFloat());
+	    
+	    this.setAllowance(this.position);
+  }
+  
 }

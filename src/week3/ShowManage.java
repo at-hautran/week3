@@ -48,26 +48,17 @@ public class ShowManage {
         break;
     }
   }
-  public void editPerson() {
-    Person obj = new Person();  
-      System.out.print("Nhap so thu tu can bo muon sua : ");
-      int stt = input.nextInt();
-      if(stt < list.size() && stt >= 0) {
-        if(list.get(stt).getCareer() == "GV") {
-          obj = new Teacher();
-          obj = addTeacher();
-        }
-        if(list.get(stt).getCareer() == "NV") {
-            obj = new Employee();
-            obj = addEmployee();
-          }
-        list.add(stt, obj);
-        list.remove(stt+1);
-      }
-      else {
-        System.out.println("Khong co can bo tai stt "+stt);
-      }
-    }
+  
+  	public void editPerson(Person obj) {
+	      if (obj.getCareer() == "GV") {
+              Teacher teacher = (Teacher) obj;
+              teacher.edit();
+	        }
+	      else if(obj.getCareer() == "NV") {
+	    	  Employee employee = (Employee) obj;
+	    	  employee.edit();
+	      }
+	    }
 
     public void colsNameDisplay() {
       System.out.printf("%-3s %-15s %-8s %-10s %-4s %-10s %-15s %-7s %-7s %-7s",
@@ -211,10 +202,19 @@ public class ShowManage {
         show();
     }
     break;
-  case 2:editPerson();
+  case 2:
+	  	 System.out.print("Nhap so thu tu can bo muon sua : ");
+	  	 int edit_position = input.nextInt();
+	  	 if(edit_position < list.size()) {
+	  		 editPerson(list.get(edit_position));
+	  	 }
+	  	 else {
+	  		System.out.println("Khong co can bo tai stt " + edit_position);	 
+	  	 }
          break;
-  case 3:System.out.print("Nhap so thu can bo can xoa : ");
-        int iii = keyboard.nextInt();
+  case 3:
+	  	 System.out.print("Nhap so thu can bo can xoa : ");
+         int iii = keyboard.nextInt();
          list.remove(iii);
          break;
   case 4:
