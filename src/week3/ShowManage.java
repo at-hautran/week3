@@ -35,6 +35,7 @@ public class ShowManage {
     switch(choose1) {
       case 1: 
         list.add(obj);
+        System.out.print(list.get(0));
         break;
       case 2:
         list.add(0,obj);
@@ -84,7 +85,6 @@ public class ShowManage {
           Teacher obj1= (Teacher)listPerson.get(i);
           obj1.printInfor();
         }
-        
         if(listPerson.get(i).getCareer() == "NV") {
           Employee obj1= (Employee)listPerson.get(i);
           obj1.printInfor();
@@ -250,7 +250,7 @@ public class ShowManage {
   }
   System.out.println("Ban co muon thuc hien tiep chu nang(c/k)?");
   choose =  keyboard.next();
-}while (choose =="c");
+}while (choose !="c");
 }
   public void addStaff() {
     

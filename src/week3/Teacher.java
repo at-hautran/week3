@@ -68,12 +68,13 @@ public class Teacher extends Person {
   }
   @Override
   public void printInfor() {
-    System.out.printf("% -20s %-10d %-15s %-10s %-15s %-7s %-7s %-7s",this.getName(),this.getYear(),this.getAddress(),
+    System.out.printf("%-20s %-10d %-15s %-10s %-15s %-7s %-7s %-7s",this.getName(),this.getYear(),this.getAddress(),
         this.getFaculty(),this.getDegree(),this.getAllowance(),this.getLesson(),this.getCoefficientSalary());
   }
   public void inputInfor() {
     System.out.print("Nhap ten : ");
-    setName(input.nextLine());
+    name = input.nextLine();
+    setName(name);
     System.out.print("Nhap nam sinh : ");
     setYear(input.nextInt());
     input.nextLine();
