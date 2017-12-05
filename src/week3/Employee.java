@@ -66,18 +66,11 @@ public class Employee extends Person {
   }
   @Override
   public void printInfor() {
-    System.out.printf("%-20s %-10d %-15s %-10s %-15s %-7s %-7s %-7s",this.getName(),this.getYear(),this.getAddress(),
-        this.getPosition(),this.getDepartment(),this.getAllowance(),this.getWorkDay(),this.getCoefficientSalary());
+    System.out.printf("%-15s %-8d %-10s %-4s %-10s %-15s %-7d %-7d %-7f",this.getName(),this.getYear(),this.getAddress(),
+        this.getCareer(), this.getPosition(),this.getDepartment(),this.getAllowance(),this.getWorkDay(),this.getCoefficientSalary());
   }
   public void inputInfor() {
-    System.out.print("Nhap ten : ");
-    String name = input.nextLine();
-    setName(name);
-    System.out.print("Nhap nam sinh : ");
-    setYear(input.nextInt());
-    input.nextLine();
-    System.out.print("Nhap que quan : ");
-    setAddress(input.nextLine());
+	super.inputInfor();
     System.out.print("Nhap phong ban : ");
     this.setDepartment(input.nextLine());
     System.out.println("Chon chuc vu : ");
@@ -93,9 +86,9 @@ public class Employee extends Person {
       this.setPosition("Truong phong");
     }
     System.out.print("Nhap so ngay cong : ");
-    this.setWorkDay(input.nextInt());
+    this.setWorkDay(inputMustPositiveInt());
     System.out.print("Nhap he so luong : ");
-    this.setCoefficientSalary(input.nextFloat());
+    this.setCoefficientSalary(inputMustPositiveFloat());
     
     this.setAllowance(this.position);
   }
@@ -117,9 +110,9 @@ public class Employee extends Person {
 	      this.setPosition("Truong phong");
 	    }
 	    System.out.print("Nhap so ngay cong : ");
-	    this.setWorkDay(input.nextInt());
+	    this.setWorkDay(inputMustPositiveInt());
 	    System.out.print("Nhap he so luong : ");
-	    this.setCoefficientSalary(input.nextFloat());
+	    this.setCoefficientSalary(inputMustPositiveFloat());
 	    
 	    this.setAllowance(this.position);
   }

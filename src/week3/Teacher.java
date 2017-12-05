@@ -72,14 +72,7 @@ public class Teacher extends Person {
         this.getFaculty(),this.getDegree(),this.getAllowance(),this.getLesson(),this.getCoefficientSalary());
   }
   public void inputInfor() {
-    System.out.print("Nhap ten : ");
-    name = input.nextLine();
-    setName(name);
-    System.out.print("Nhap nam sinh : ");
-    setYear(input.nextInt());
-    input.nextLine();
-    System.out.print("Nhap que quan : ");
-    setAddress(input.nextLine());
+	super.inputInfor();
     System.out.print("Nhap khoa : ");
     this.setFaculty(input.nextLine());
     System.out.println("Chon trinh do : ");
@@ -95,9 +88,9 @@ public class Teacher extends Person {
       this.setDegree("Tien si");
     }
     System.out.print("Nhap so tiet day/thang : ");
-    this.setLesson(input.nextInt());
+    this.setLesson(inputMustPositiveInt());
     System.out.print("Nhap he so luong : ");
-    this.setCoefficientSalary(input.nextFloat());
+    this.setCoefficientSalary(inputMustPositiveFloat());
     input.nextLine();
     this.setAllowance(this.degree);
   }
@@ -119,9 +112,9 @@ public class Teacher extends Person {
 	    this.setDegree("Tien si");
 	  }
 	  System.out.print("Nhap so tiet day/thang : ");
-	  this.setLesson(input.nextInt());
+	  this.setLesson(inputMustPositiveInt());
 	  System.out.print("Nhap he so luong : ");
-	  this.setCoefficientSalary(input.nextFloat());
+	  this.setCoefficientSalary(inputMustPositiveFloat());
 	  input.nextLine();
 	  this.setAllowance(this.degree);
   }
