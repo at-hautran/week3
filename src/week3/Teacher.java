@@ -68,17 +68,11 @@ public class Teacher extends Person {
   }
   @Override
   public void printInfor() {
-    System.out.printf("% -20s %-10d %-15s %-10s %-15s %-7s %-7s %-7s",this.getName(),this.getYear(),this.getAddress(),
+    System.out.printf("%-20s %-10d %-15s %-10s %-15s %-7s %-7s %-7s",this.getName(),this.getYear(),this.getAddress(),
         this.getFaculty(),this.getDegree(),this.getAllowance(),this.getLesson(),this.getCoefficientSalary());
   }
   public void inputInfor() {
-    System.out.print("Nhap ten : ");
-    setName(input.nextLine());
-    System.out.print("Nhap nam sinh : ");
-    setYear(input.nextInt());
-    input.nextLine();
-    System.out.print("Nhap que quan : ");
-    setAddress(input.nextLine());
+	super.inputInfor();
     System.out.print("Nhap khoa : ");
     this.setFaculty(input.nextLine());
     System.out.println("Chon trinh do : ");
@@ -94,10 +88,34 @@ public class Teacher extends Person {
       this.setDegree("Tien si");
     }
     System.out.print("Nhap so tiet day/thang : ");
-    this.setLesson(input.nextInt());
+    this.setLesson(inputMustPositiveInt());
     System.out.print("Nhap he so luong : ");
-    this.setCoefficientSalary(input.nextFloat());
+    this.setCoefficientSalary(inputMustPositiveFloat());
     input.nextLine();
     this.setAllowance(this.degree);
+  }
+  
+  public void edit() {
+	  super.edit();
+	  System.out.print("Nhap khoa : ");
+	  this.setFaculty(input.nextLine());
+	  System.out.println("Chon trinh do : ");
+	  System.out.println("\t1.Cu nhan 2.Thac si 3.Tien si");
+	  int choose = input.nextInt();
+	  if(choose == 1) {
+	    this.setDegree("Cu nhan");
+	  }
+	  else if(choose == 2) {
+	    this.setDegree("Thac si");
+	  }
+	  else if(choose == 3) {
+	    this.setDegree("Tien si");
+	  }
+	  System.out.print("Nhap so tiet day/thang : ");
+	  this.setLesson(inputMustPositiveInt());
+	  System.out.print("Nhap he so luong : ");
+	  this.setCoefficientSalary(inputMustPositiveFloat());
+	  input.nextLine();
+	  this.setAllowance(this.degree);
   }
 }
