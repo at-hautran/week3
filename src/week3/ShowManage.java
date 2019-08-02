@@ -84,7 +84,6 @@ public class ShowManage {
           Teacher obj1= (Teacher)listPerson.get(i);
           obj1.printInfor();
         }
-        
         if(listPerson.get(i).getCareer() == "NV") {
           Employee obj1= (Employee)listPerson.get(i);
           obj1.printInfor();
@@ -250,7 +249,7 @@ public class ShowManage {
   }
   System.out.println("Ban co muon thuc hien tiep chu nang(c/k)?");
   choose =  keyboard.next();
-}while (choose =="c");
+}while (choose !="c");
 }
   public void addStaff() {
     
